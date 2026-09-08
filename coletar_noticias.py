@@ -57,18 +57,29 @@ except ImportError:
 FONTES_PATH = os.path.join(os.path.dirname(__file__), "fontes.json")
 NOTICIAS_PATH = os.path.join(os.path.dirname(__file__), "noticias.json")
 
-# Modelo Gemini. "gemini-flash-latest" e um alias mantido pela Google que
-# sempre aponta para o Flash gratuito mais recente - evita ter que atualizar
-# este script sempre que um novo modelo sai. Se preferir travar numa versao
-# especifica (mais previsivel, porem exige atualizacao manual no futuro),
-# troque por algo como "gemini-2.5-flash".
-GEMINI_MODEL = "gemini-flash-latest"
+# Modelo Gemini. Travado numa versao especifica (em vez do alias
+# "gemini-flash-latest") de proposito: na pratica, o alias pode passar a
+# apontar para o modelo "flash" mais novo e mais caro a qualquer momento, e
+# esses modelos de ponta costumam vir com cota gratuita bem mais curta (em
+# testes, so 20 requisicoes/dia). O "flash-lite" e a opcao mais barata da
+# Google e tende a ter a cota diaria gratuita mais generosa - se ainda assim
+# aparecer "RESOURCE_EXHAUSTED"/429 no log com frequencia, confira sua cota
+# atual em https://aistudio.google.com/rate-limit (ela muda com o tempo e
+# por conta) e avalie ativar faturamento - o volume daqui e pequeno o
+# suficiente para custar centavos por mes mesmo saindo do nivel gratuito.
+GEMINI_MODEL = "gemini-3.5-flash-lite"
 
 # Limite de noticias novas processadas por execucao, para nao estourar a
-# cota gratuita da API (free tier gira em torno de 1000-1500 requisicoes/dia
-# e ~10-15 por minuto, variando por modelo). O que sobrar fica pendente e e
-# processado na proxima execucao diaria, sem duplicar.
+# cota gratuita da API (varia por modelo e conta - o script para sozinho
+# antes do limite, veja CotaEsgotadaError abaixo). O que sobrar fica
+# pendente e e processado na proxima execucao diaria, sem duplicar.
 MAX_NOVAS_POR_EXECUCAO = 40
+
+# Quantas vezes tentar de novo uma classificacao que falhou por erro
+# temporario do servidor (503 "model overloaded"), antes de desistir dessa
+# noticia especifica nesta rodada (ela volta a ser tentada amanha).
+TENTATIVAS_POR_NOTICIA = 2
+ESPERA_ENTRE_TENTATIVAS = 8
 
 # Pausa entre chamadas a IA, em segundos, para respeitar o limite por minuto.
 PAUSA_ENTRE_CHAMADAS = 4.5
@@ -288,6 +299,22 @@ def coletar_entradas_novas(fontes, ja_processadas):
 # ---------------------------------------------------------------------------
 
 
+class CotaEsgotadaError(Exception):
+    """A cota gratuita da API se esgotou por hoje - nao adianta insistir."""
+
+
+def _chamar_gemini(client, prompt):
+    return client.models.generate_content(
+        model=GEMINI_MODEL,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_json_schema=RESPONSE_SCHEMA,
+            temperature=0.4,
+        ),
+    )
+
+
 def classificar_com_gemini(client, entrada):
     prompt = PROMPT_TEMPLATE.format(
         tecnologias=", ".join(TECH_VALUES),
@@ -298,15 +325,26 @@ def classificar_com_gemini(client, entrada):
         resumo=entrada["resumo_original"] or "(sem resumo disponivel)",
     )
 
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_json_schema=RESPONSE_SCHEMA,
-            temperature=0.4,
-        ),
-    )
+    ultimo_erro = None
+    for tentativa in range(1, TENTATIVAS_POR_NOTICIA + 1):
+        try:
+            response = _chamar_gemini(client, prompt)
+            break
+        except Exception as e:  # noqa: BLE001
+            texto_erro = str(e)
+            # Cota diaria esgotada (RESOURCE_EXHAUSTED / HTTP 429): tentar de
+            # novo nao ajuda - a API sempre devolve o mesmo erro ate o reset
+            # da cota (geralmente no dia seguinte). Melhor parar a rodada
+            # inteira do que insistir noticia por noticia.
+            if "RESOURCE_EXHAUSTED" in texto_erro or "429" in texto_erro:
+                raise CotaEsgotadaError(texto_erro) from e
+            # Erro temporario (503 "model overloaded", conexao caiu etc.):
+            # vale tentar de novo depois de uma pausa curta.
+            ultimo_erro = e
+            if tentativa < TENTATIVAS_POR_NOTICIA:
+                time.sleep(ESPERA_ENTRE_TENTATIVAS)
+    else:
+        raise ultimo_erro
 
     dados = json.loads(response.text)
 
@@ -371,6 +409,14 @@ def main():
         try:
             item = classificar_com_gemini(client, entrada)
             novas_classificadas.append(item)
+        except CotaEsgotadaError as e:
+            restantes = len(a_processar) - i + 1
+            log(
+                f"AVISO: cota gratuita do Gemini esgotada por hoje. Parando esta "
+                f"execucao - {restantes} noticia(s) ficam pendentes para a proxima "
+                f"rodada agendada, sem se perder. Detalhe: {e}"
+            )
+            break
         except Exception as e:  # noqa: BLE001
             log(f"ERRO ao classificar '{entrada['titulo_original'][:50]}': {e}")
         time.sleep(PAUSA_ENTRE_CHAMADAS)
