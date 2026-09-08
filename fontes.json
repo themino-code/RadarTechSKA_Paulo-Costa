@@ -1,0 +1,50 @@
+[
+    {
+        "nome": "Engineering.com",
+        "url": "https://www.engineering.com/rss"
+    },
+    {
+        "nome": "CIMdata",
+        "url": "https://www.cimdata.com/en/news?format=feed"
+    },
+    {
+        "nome": "Automation World",
+        "url": "https://www.automationworld.com/rss"
+    },
+    {
+        "nome": "Control Engineering",
+        "url": "https://www.controleng.com/feed/"
+    },
+    {
+        "nome": "Indústria 4.0",
+        "url": "https://www.industria40.ind.br/feed/"
+    },
+    {
+        "nome": "Automation.com",
+        "url": "https://www.automation.com/rss"
+    },
+    {
+        "nome": "TCT Magazine",
+        "url": "https://www.tctmagazine.com/rss"
+    },
+    {
+        "nome": "Additive Manufacturing",
+        "url": "https://www.additivemanufacturing.media/rss"
+    },
+    {
+        "nome": "CIMM",
+        "url": "https://www.cimm.com.br/portal/noticias.rss"
+    },
+    {
+        "nome": "Mecânica Industrial",
+        "url": "https://www.mecanicaindustrial.com.br/feed/"
+    },
+    {
+        "nome": "Develop3D",
+        "url": "https://develop3d.com/feed/"
+    },
+    {
+        "nome": "Beyond PLM",
+        "url": "https://beyondplm.com/feed/"
+    }
+]

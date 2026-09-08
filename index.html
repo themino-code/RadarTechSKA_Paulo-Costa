@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SKA Radar Tech</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; background: #F7F7F7; font-family: 'Montserrat', system-ui, sans-serif; }
+  a { color: #005C94; }
+  a:hover { color: #004068; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-thumb { background: #C8C8C8; border-radius: 3px; }
+
+  #app { display: flex; flex-direction: column; min-height: 100vh; }
+
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px; padding: 0 32px; background: #FFFFFF; border-bottom: 1px solid #E3E3E3;
+    flex-shrink: 0;
+  }
+  .brand { display: flex; align-items: baseline; gap: 12px; }
+  .brand-ska { font-size: 25px; font-weight: 800; color: #004E7E; letter-spacing: -0.3px; }
+  .brand-sep { width: 1px; height: 20px; background: #C8C8C8; display: inline-block; }
+  .brand-name { font-size: 19px; font-weight: 500; color: #313131; }
+  .header-pill { font-size: 12px; font-weight: 600; color: #4D4D4D; background: #F7F7F7; padding: 8px 16px; border-radius: 20px; }
+
+  .tabs {
+    display: flex; align-items: center; gap: 6px; padding: 0 28px;
+    background: #FFFFFF; border-bottom: 1px solid #E3E3E3; overflow-x: auto; flex-shrink: 0;
+  }
+  .tab { padding: 16px 18px; cursor: pointer; border-bottom: 3px solid transparent; }
+  .tab:hover .tab-label { color: #004E7E; }
+  .tab-label { font-size: 14px; white-space: nowrap; }
+
+  .history-bar {
+    display: flex; align-items: center; gap: 14px; padding: 10px 28px;
+    background: #FFFFFF; border-bottom: 1px solid #E3E3E3; flex-shrink: 0;
+  }
+  .prev-month { display: flex; align-items: center; gap: 5px; cursor: pointer; padding: 6px 10px; border-radius: 8px; flex-shrink: 0; }
+  .prev-month span { font-size: 12.5px; font-weight: 600; color: #4D4D4D; white-space: nowrap; }
+  .days-strip { display: flex; gap: 6px; overflow-x: auto; flex: 1; padding-bottom: 2px; }
+  .day-chip { flex-shrink: 0; min-width: 32px; text-align: center; padding: 6px 9px; border-radius: 8px; cursor: pointer; }
+  .day-chip span { font-size: 12px; white-space: nowrap; }
+  .current-month-btn { display: flex; align-items: center; gap: 6px; cursor: pointer; padding: 7px 14px; border-radius: 8px; flex-shrink: 0; }
+  .current-month-btn span { font-size: 12.5px; font-weight: 700; white-space: nowrap; }
+
+  .body-row { display: flex; flex: 1; min-height: 0; }
+
+  .sidebar { width: 268px; flex-shrink: 0; background: #FFFFFF; border-right: 1px solid #E3E3E3; padding: 20px 14px; overflow-y: auto; }
+  .sidebar-title { font-size: 11px; font-weight: 700; color: #A4A4A4; letter-spacing: 0.8px; text-transform: uppercase; padding: 0 10px 10px; }
+  .ind-row { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; cursor: pointer; margin-bottom: 1px; }
+  .ind-row:hover { background: #F0F7FF; }
+  .ind-dot { width: 6px; height: 6px; border-radius: 50%; background: #0099FF; flex-shrink: 0; }
+  .ind-label { font-size: 12.5px; line-height: 1.3; }
+
+  .main { flex: 1; min-width: 0; padding: 24px 28px 40px; overflow-y: auto; }
+  .result-count { margin-bottom: 18px; font-size: 13px; color: #666666; }
+  .result-count strong { font-weight: 600; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+
+  .card {
+    display: flex; flex-direction: column; gap: 11px; background: #FFFFFF;
+    border-radius: 10px; padding: 18px;
+    box-shadow: 0 1px 2px rgba(13,59,102,0.07), 0 1px 8px rgba(13,59,102,0.05);
+  }
+  .card-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .tag-category { font-size: 10px; font-weight: 700; color: #004068; background: #E1EFFF; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap; }
+  .tag-industry { font-size: 11px; font-weight: 600; color: #4D4D4D; background: #F7F7F7; border: 1px solid #E3E3E3; padding: 3px 10px; border-radius: 12px; white-space: nowrap; }
+  .tag-tech { font-size: 10.5px; font-weight: 700; color: #0082E6; background: transparent; border: 1px solid #A4CFFF; padding: 3px 10px; border-radius: 12px; white-space: nowrap; }
+  .card-date { font-size: 11px; color: #A4A4A4; white-space: nowrap; margin-left: auto; }
+  .card-headline { font-size: 15.5px; font-weight: 700; color: #1A1A1A; line-height: 1.35; }
+  .card-summary { font-size: 12.5px; color: #4D4D4D; line-height: 1.55; }
+  .card-box { border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; }
+  .card-box-pitch { background: #FFF9E6; }
+  .card-box-pitch .label { color: #996F00; }
+  .card-box-pitch .text { color: #3D2E00; }
+  .card-box-benef { background: #F0F7FF; }
+  .card-box-benef .label { color: #03619F; }
+  .card-box-benef .text { color: #002741; }
+  .card-box .label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .card-box .text { font-size: 12px; line-height: 1.5; }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
+  .card-source { font-size: 11px; color: #808080; }
+  .card-link { font-size: 11.5px; font-weight: 600; color: #005C94; text-decoration: none; display: flex; align-items: center; gap: 4px; }
+
+  .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 100px 20px; gap: 14px; }
+  .empty-state p { font-size: 14px; color: #666666; text-align: center; margin: 0; }
+  .empty-state button {
+    font: inherit; font-size: 13px; font-weight: 600; color: #005C94; background: none; border: none;
+    cursor: pointer; text-decoration: underline; padding: 0;
+  }
+
+  .loading, .load-error { padding: 60px 20px; text-align: center; color: #666666; font-size: 13px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="header">
+    <div class="brand">
+      <span class="brand-ska">SKA</span>
+      <span class="brand-sep"></span>
+      <span class="brand-name">Radar Tech</span>
+    </div>
+    <div>
+      <span class="header-pill">Time de Pré-Vendas &amp; Consultoria</span>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="history-bar">
+    <div class="prev-month" id="prevMonthBtn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4D4D4D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      <span>Mês anterior</span>
+    </div>
+    <div class="days-strip" id="daysStrip"></div>
+    <div class="current-month-btn" id="currentMonthBtn"><span id="currentMonthLabel"></span></div>
+  </div>
+
+  <div class="body-row">
+    <div class="sidebar">
+      <div class="sidebar-title">Indústrias</div>
+      <div id="industryList"></div>
+    </div>
+
+    <div class="main">
+      <div class="result-count" id="resultCount"></div>
+      <div id="content"><div class="loading">Carregando notícias...</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var CATEGORY_DEFS = [
+    { id: "all", label: "Todas as categorias" },
+    { id: "design", label: "Design e Inovação" },
+    { id: "fabrica", label: "Fábrica Inteligente" },
+    { id: "governanca", label: "Governança da Informação" }
+  ];
+
+  var INDUSTRY_DEFS = [
+    { id: "all", label: "Todas as indústrias" },
+    { id: "industrial-equipment", label: "Industrial Equipment" },
+    { id: "transportation-mobility", label: "Transportation & Mobility" },
+    { id: "aerospace-defense", label: "Aerospace & Defense" },
+    { id: "high-tech", label: "High Tech" },
+    { id: "home-lifestyle", label: "Home & LifeStyle" },
+    { id: "infra-energy-materials", label: "Infrastructure, Energy & Materials" },
+    { id: "business-service", label: "Business Service" },
+    { id: "cities-public-services", label: "Cities & Public Services" },
+    { id: "aec", label: "Architecture, Engineering & Construction" },
+    { id: "cpg-retail", label: "Consumer Packaged Goods – Retails" },
+    { id: "life-sciences-healthcare", label: "Life Sciences & Healthcare" }
+  ];
+
+  var MONTH_NAMES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+  var MAX_MONTHS_BACK = 11;
+
+  var state = {
+    activeCategory: "all",
+    activeIndustry: "all",
+    monthsBack: 0,
+    selectedDay: null,
+    news: [],
+    loadError: false
+  };
+
+  var today = new Date();
+  var refYear = today.getFullYear();
+  var refMonthIndex = today.getMonth();
+
+  function parseDate(str) {
+    var parts = str.split("/");
+    return { d: Number(parts[0]), m: Number(parts[1]), y: Number(parts[2]) };
+  }
+
+  function el(tag, className, html) {
+    var e = document.createElement("div");
+    e.className = className || "";
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  function escapeHtml(str) {
+    var d = document.createElement("div");
+    d.textContent = str == null ? "" : String(str);
+    return d.innerHTML;
+  }
+
+  function render() {
+    renderTabs();
+    renderHistoryBar();
+    renderIndustries();
+    renderCards();
+  }
+
+  function renderTabs() {
+    var tabs = document.getElementById("tabs");
+    tabs.innerHTML = "";
+    CATEGORY_DEFS.forEach(function (c) {
+      var active = c.id === state.activeCategory;
+      var tab = el("div", "tab");
+      tab.style.borderBottomColor = active ? "#FFB800" : "transparent";
+      var label = el("span", "tab-label", escapeHtml(c.label));
+      label.style.color = active ? "#004E7E" : "#4D4D4D";
+      label.style.fontWeight = active ? "700" : "500";
+      tab.appendChild(label);
+      tab.addEventListener("click", function () {
+        state.activeCategory = c.id;
+        render();
+      });
+      tabs.appendChild(tab);
+    });
+  }
+
+  function renderHistoryBar() {
+    var viewedRef = new Date(refYear, refMonthIndex - state.monthsBack, 1);
+    var viewedYear = viewedRef.getFullYear();
+    var viewedMonthIndex = viewedRef.getMonth();
+    var daysInMonth = new Date(viewedYear, viewedMonthIndex + 1, 0).getDate();
+    var isCurrentMonth = state.monthsBack === 0;
+
+    var prevBtn = document.getElementById("prevMonthBtn");
+    prevBtn.style.opacity = state.monthsBack >= MAX_MONTHS_BACK ? "0.35" : "1";
+    prevBtn.onclick = function () {
+      if (state.monthsBack < MAX_MONTHS_BACK) {
+        state.monthsBack += 1;
+        state.selectedDay = null;
+        render();
+      }
+    };
+
+    var strip = document.getElementById("daysStrip");
+    strip.innerHTML = "";
+
+    var allChip = el("div", "day-chip");
+    var allSelected = state.selectedDay === null;
+    allChip.style.background = allSelected ? "#004E7E" : "#F7F7F7";
+    var allLabel = el("span", "", "Todos");
+    allLabel.style.color = allSelected ? "#FFFFFF" : "#4D4D4D";
+    allLabel.style.fontWeight = allSelected ? "700" : "500";
+    allChip.appendChild(allLabel);
+    allChip.addEventListener("click", function () { state.selectedDay = null; render(); });
+    strip.appendChild(allChip);
+
+    for (var d2 = 1; d2 <= daysInMonth; d2++) {
+      (function (day) {
+        var hasNews = state.news.some(function (n) {
+          var nd = parseDate(n.date);
+          return nd.y === viewedYear && nd.m === viewedMonthIndex + 1 && nd.d === day;
+        });
+        var isSelected = state.selectedDay === day;
+        var chip = el("div", "day-chip");
+        chip.style.background = isSelected ? "#004E7E" : (hasNews ? "#E1EFFF" : "transparent");
+        var label = el("span", "", String(day));
+        label.style.color = isSelected ? "#FFFFFF" : (hasNews ? "#004068" : "#C8C8C8");
+        label.style.fontWeight = isSelected ? "700" : (hasNews ? "600" : "500");
+        chip.appendChild(label);
+        chip.addEventListener("click", function () { state.selectedDay = day; render(); });
+        strip.appendChild(chip);
+      })(d2);
+    }
+
+    var currentBtn = document.getElementById("currentMonthBtn");
+    var currentLabel = document.getElementById("currentMonthLabel");
+    currentBtn.style.background = isCurrentMonth ? "#FFB800" : "#F7F7F7";
+    currentLabel.style.color = isCurrentMonth ? "#3D2E00" : "#4D4D4D";
+    currentLabel.textContent = MONTH_NAMES[refMonthIndex] + " " + refYear;
+    currentBtn.onclick = function () {
+      state.monthsBack = 0;
+      state.selectedDay = null;
+      render();
+    };
+
+    state._viewedYear = viewedYear;
+    state._viewedMonthIndex = viewedMonthIndex;
+  }
+
+  function renderIndustries() {
+    var list = document.getElementById("industryList");
+    list.innerHTML = "";
+    INDUSTRY_DEFS.forEach(function (i) {
+      var active = i.id === state.activeIndustry;
+      var row = el("div", "ind-row");
+      row.style.background = active ? "#E1EFFF" : "transparent";
+      var dot = el("span", "ind-dot");
+      dot.style.opacity = active ? "1" : "0";
+      var label = el("span", "ind-label", escapeHtml(i.label));
+      label.style.color = active ? "#004068" : "#313131";
+      label.style.fontWeight = active ? "600" : "500";
+      row.appendChild(dot);
+      row.appendChild(label);
+      row.addEventListener("click", function () {
+        state.activeIndustry = i.id;
+        render();
+      });
+      list.appendChild(row);
+    });
+  }
+
+  function renderCards() {
+    var content = document.getElementById("content");
+    var resultCount = document.getElementById("resultCount");
+
+    if (state.loadError) {
+      content.innerHTML = "";
+      content.appendChild(el("div", "load-error", "Não foi possível carregar noticias.json. Verifique se o arquivo existe na raiz do site."));
+      resultCount.textContent = "";
+      return;
+    }
+
+    var viewedYear = state._viewedYear;
+    var viewedMonthIndex = state._viewedMonthIndex;
+
+    var filtered = state.news.filter(function (n) {
+      var nd = parseDate(n.date);
+      var categoryMatch = state.activeCategory === "all" || n.categoryId === state.activeCategory;
+      var industryMatch = state.activeIndustry === "all" || n.industryId === state.activeIndustry;
+      var monthMatch = nd.y === viewedYear && nd.m === viewedMonthIndex + 1;
+      var dayMatch = state.selectedDay === null || nd.d === state.selectedDay;
+      return categoryMatch && industryMatch && monthMatch && dayMatch;
+    });
+
+    resultCount.innerHTML = "<strong>" + filtered.length + "</strong> notícias encontradas";
+
+    content.innerHTML = "";
+
+    if (filtered.length === 0) {
+      var empty = el("div", "empty-state");
+      empty.appendChild(el("p", "", "Nenhuma notícia encontrada para essa combinação de categoria, indústria e período."));
+      var btn = document.createElement("button");
+      btn.textContent = "Limpar filtros";
+      btn.addEventListener("click", function () {
+        state.activeCategory = "all";
+        state.activeIndustry = "all";
+        state.monthsBack = 0;
+        state.selectedDay = null;
+        render();
+      });
+      empty.appendChild(btn);
+      content.appendChild(empty);
+      return;
+    }
+
+    var grid = el("div", "grid");
+    filtered.forEach(function (card) {
+      grid.appendChild(renderCard(card));
+    });
+    content.appendChild(grid);
+  }
+
+  function renderCard(card) {
+    var wrap = el("div", "card");
+
+    var tags = el("div", "card-tags");
+    tags.appendChild(el("span", "tag-category", escapeHtml(card.categoryLabel)));
+    tags.appendChild(el("span", "tag-industry", escapeHtml(card.industryLabel)));
+    tags.appendChild(el("span", "tag-tech", escapeHtml(card.tech)));
+    tags.appendChild(el("span", "card-date", escapeHtml(card.date)));
+    wrap.appendChild(tags);
+
+    wrap.appendChild(el("div", "card-headline", escapeHtml(card.headline)));
+    wrap.appendChild(el("div", "card-summary", escapeHtml(card.summary)));
+
+    var pitchBox = el("div", "card-box card-box-pitch");
+    pitchBox.appendChild(el("span", "label", "Pitch comercial SKA"));
+    pitchBox.appendChild(el("span", "text", escapeHtml(card.pitch)));
+    wrap.appendChild(pitchBox);
+
+    var benefBox = el("div", "card-box card-box-benef");
+    benefBox.appendChild(el("span", "label", "Benefícios técnicos de aplicação"));
+    benefBox.appendChild(el("span", "text", escapeHtml(card.techBenefits)));
+    wrap.appendChild(benefBox);
+
+    var footer = el("div", "card-footer");
+    footer.appendChild(el("span", "card-source", "Fonte: " + escapeHtml(card.source)));
+    var link = document.createElement("a");
+    link.className = "card-link";
+    link.href = card.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.innerHTML = '<span>Ler notícia</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>';
+    footer.appendChild(link);
+    wrap.appendChild(footer);
+
+    return wrap;
+  }
+
+  fetch("noticias.json", { cache: "no-store" })
+    .then(function (resp) {
+      if (!resp.ok) throw new Error("HTTP " + resp.status);
+      return resp.json();
+    })
+    .then(function (data) {
+      state.news = Array.isArray(data) ? data : [];
+      render();
+    })
+    .catch(function (err) {
+      console.error("Erro ao carregar noticias.json:", err);
+      state.loadError = true;
+      render();
+    });
+
+  render();
+})();
+</script>
+</body>
+</html>
