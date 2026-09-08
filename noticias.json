@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "59a6f52d0d1126f7",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "A pergunta que o PLM e a gestão de mudanças não respondem: por que foi projetado dessa forma?",
+    "summary": "O artigo discute o conceito de 'Memória do Produto', abordando a dificuldade dos sistemas tradicionais de PLM e gestão de mudanças em registrar as motivações e o racional por trás das decisões de projeto.",
+    "pitch": "Muitas empresas sofrem retrabalho e perda de conhecimento crítico ao não registrar o porquê de suas decisões de engenharia. Com a plataforma 3DEXPERIENCE da SKA, sua equipe centraliza requisitos, histórico e colaboração, garantindo a rastreabilidade completa do ciclo de vida do produto.",
+    "techBenefits": "A captura do histórico de decisões e a rastreabilidade estruturada no ciclo de vida evitam a repetição de erros e preservam a propriedade intelectual da engenharia. Isso permite análises de impacto mais precisas durante modificações de projeto e auditorias técnicas.",
+    "source": "Beyond PLM",
+    "date": "10/08/2026",
+    "url": "https://beyondplm.com/2026/08/10/the-question-plm-and-change-management-cannot-answer-why-was-it-designed-this-way/"
+  },
+  {
+    "id": "a83c15dee0930f3e",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "Por que a memória do produto não é apenas um novo nome para PLM",
+    "summary": "O artigo aborda o conceito emergente de 'Product Memory' e esclarece que ele representa uma evolução na retenção do histórico e contexto de engenharia, diferenciando-se da visão tradicional de PLM centrada apenas em arquivos CAD.",
+    "pitch": "A discussão reforça que a gestão da informação de engenharia precisa ir além do simples armazenamento de arquivos CAD; com a plataforma PLM 3DEXPERIENCE da SKA, sua empresa garante a continuidade digital e preserva todo o conhecimento técnico gerado no desenvolvimento do produto.",
+    "techBenefits": "A estruturação do histórico e contexto das decisões de projeto viabiliza a rastreabilidade completa dos dados técnicos, evitando silos de informação e retrabalho em revisões futuras.",
+    "source": "Beyond PLM",
+    "date": "03/08/2026",
+    "url": "https://beyondplm.com/2026/08/03/why-product-memory-is-not-a-new-name-for-plm/"
+  }
+]
