@@ -1,0 +1,44 @@
+name: Atualizar noticias do Radar Tech
+
+on:
+  schedule:
+    # 09:00 UTC = 06:00 no horario de Brasilia (America/Sao_Paulo, UTC-3).
+    # Se o horario de Brasilia mudar de novo, ajuste aqui.
+    - cron: "0 9 * * *"
+  # Permite disparar manualmente na aba "Actions" do GitHub, sem esperar o cron.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Coletar e classificar noticias
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python coletar_noticias.py
+
+      - name: Publicar noticias.json atualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add noticias.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma noticia nova hoje."
+          else
+            git commit -m "Atualiza noticias - $(date -u +'%Y-%m-%d')"
+            git push
+          fi
