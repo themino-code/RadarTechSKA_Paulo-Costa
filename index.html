@@ -48,12 +48,42 @@
 
   .body-row { display: flex; flex: 1; min-height: 0; }
 
-  .sidebar { width: 268px; flex-shrink: 0; background: #FFFFFF; border-right: 1px solid #E3E3E3; padding: 20px 14px; overflow-y: auto; }
-  .sidebar-title { font-size: 11px; font-weight: 700; color: #A4A4A4; letter-spacing: 0.8px; text-transform: uppercase; padding: 0 10px 10px; }
-  .ind-row { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; cursor: pointer; margin-bottom: 1px; }
-  .ind-row:hover { background: #F0F7FF; }
+  .sidebar { width: 268px; flex-shrink: 0; background: #FFFFFF; border-right: 1px solid #E3E3E3; padding: 20px 16px 28px; overflow-y: auto; }
+  .sidebar-title { font-size: 11px; font-weight: 700; color: #A4A4A4; letter-spacing: 0.8px; text-transform: uppercase; padding: 0 2px 14px; }
   .ind-dot { width: 6px; height: 6px; border-radius: 50%; background: #0099FF; flex-shrink: 0; }
-  .ind-label { font-size: 12.5px; line-height: 1.3; }
+
+  .filter-group { margin-bottom: 16px; }
+  .filter-label { font-size: 10.5px; font-weight: 700; color: #808080; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 7px; padding-left: 2px; }
+  .filter-btn {
+    display: flex; align-items: center; gap: 9px; padding: 10px 12px; border-radius: 8px;
+    cursor: pointer; border: 1px solid #E3E3E3; background: #FFFFFF;
+  }
+  .filter-btn-text { flex: 1; min-width: 0; font-size: 12.5px; line-height: 1.3; }
+  .chevron { flex-shrink: 0; display: flex; transition: transform 0.15s ease; }
+  .filter-panel {
+    margin-top: 6px; padding: 5px; border: 1px solid #E3E3E3; border-radius: 8px; background: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(13,59,102,0.12); max-height: 296px; overflow-y: auto;
+  }
+  .opt-row { display: flex; align-items: center; gap: 9px; padding: 8px 9px; border-radius: 6px; cursor: pointer; }
+  .opt-row:hover { background: #F0F7FF; }
+  .opt-box {
+    width: 15px; height: 15px; border-radius: 4px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    border: 1.5px solid #C8C8C8; background: #FFFFFF;
+  }
+  .opt-label { font-size: 12px; line-height: 1.35; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+  .chip {
+    display: flex; align-items: center; gap: 5px; padding: 4px 8px; border-radius: 12px;
+    cursor: pointer; background: #E1EFFF; border: 1px solid #A4CFFF; max-width: 100%;
+  }
+  .chip span { font-size: 10.5px; font-weight: 600; color: #004068; line-height: 1.3; }
+  .clear-btn {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 9px 12px; border-radius: 8px; cursor: pointer; background: #F7F7F7;
+  }
+  .clear-btn:hover { background: #EDEDED; }
+  .clear-btn span { font-size: 12px; font-weight: 600; color: #666666; }
 
   .main { flex: 1; min-width: 0; padding: 24px 28px 40px; overflow-y: auto; }
   .result-count { margin-bottom: 18px; font-size: 13px; color: #666666; }
@@ -61,7 +91,11 @@
 
   .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; }
+    .body-row { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #E3E3E3; padding-bottom: 20px; }
+  }
 
   .card {
     display: flex; flex-direction: column; gap: 11px; background: #FFFFFF;
@@ -71,7 +105,8 @@
   .card-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
   .tag-category { font-size: 10px; font-weight: 700; color: #004068; background: #E1EFFF; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap; }
   .tag-industry { font-size: 11px; font-weight: 600; color: #4D4D4D; background: #F7F7F7; border: 1px solid #E3E3E3; padding: 3px 10px; border-radius: 12px; white-space: nowrap; }
-  .tag-tech { font-size: 10.5px; font-weight: 700; color: #0082E6; background: transparent; border: 1px solid #A4CFFF; padding: 3px 10px; border-radius: 12px; white-space: nowrap; }
+  .tag-tech { font-size: 10.5px; font-weight: 700; color: #0082E6; background: transparent; border: 1px solid #A4CFFF; padding: 3px 10px; border-radius: 12px; white-space: nowrap; cursor: pointer; }
+  .tag-tech:hover { background: #E1EFFF; }
   .card-date { font-size: 11px; color: #A4A4A4; white-space: nowrap; margin-left: auto; }
   .card-headline { font-size: 15.5px; font-weight: 700; color: #1A1A1A; line-height: 1.35; }
   .card-summary { font-size: 12.5px; color: #4D4D4D; line-height: 1.55; }
@@ -124,8 +159,10 @@
 
   <div class="body-row">
     <div class="sidebar">
-      <div class="sidebar-title">Indústrias</div>
-      <div id="industryList"></div>
+      <div class="sidebar-title">Filtros</div>
+      <div class="filter-group" id="industryFilter"></div>
+      <div class="filter-group" id="techFilter"></div>
+      <div id="clearAllWrap"></div>
     </div>
 
     <div class="main">
@@ -147,7 +184,6 @@
   ];
 
   var INDUSTRY_DEFS = [
-    { id: "all", label: "Todas as indústrias" },
     { id: "industrial-equipment", label: "Industrial Equipment" },
     { id: "transportation-mobility", label: "Transportation & Mobility" },
     { id: "aerospace-defense", label: "Aerospace & Defense" },
@@ -161,12 +197,29 @@
     { id: "life-sciences-healthcare", label: "Life Sciences & Healthcare" }
   ];
 
+  // Precisa bater exatamente com os valores que o coletar_noticias.py grava
+  // no campo "tech" de cada notícia (constante TECH_TO_CATEGORY do script).
+  var TECH_DEFS = [
+    { id: "CAD", label: "CAD" },
+    { id: "CAE", label: "CAE" },
+    { id: "Automação de Projetos", label: "Automação de Projetos" },
+    { id: "Generative Design", label: "Generative Design" },
+    { id: "CAM", label: "CAM" },
+    { id: "Manufatura Aditiva", label: "Manufatura Aditiva" },
+    { id: "MES", label: "MES" },
+    { id: "APS", label: "APS" },
+    { id: "PLM", label: "PLM" }
+  ];
+
   var MONTH_NAMES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
   var MAX_MONTHS_BACK = 11;
 
   var state = {
     activeCategory: "all",
-    activeIndustry: "all",
+    activeIndustries: [],
+    activeTechs: [],
+    industryOpen: false,
+    techOpen: false,
     monthsBack: 0,
     selectedDay: null,
     news: [],
@@ -195,10 +248,42 @@
     return d.innerHTML;
   }
 
+  function toggleId(list, id) {
+    return list.indexOf(id) !== -1
+      ? list.filter(function (x) { return x !== id; })
+      : list.concat([id]);
+  }
+
+  function labelFor(defs, id) {
+    for (var i = 0; i < defs.length; i++) {
+      if (defs[i].id === id) return defs[i].label;
+    }
+    return id;
+  }
+
+  function anyFilterActive() {
+    return state.activeCategory !== "all" ||
+           state.activeIndustries.length > 0 ||
+           state.activeTechs.length > 0 ||
+           state.selectedDay !== null ||
+           state.monthsBack !== 0;
+  }
+
+  function clearAllFilters() {
+    state.activeCategory = "all";
+    state.activeIndustries = [];
+    state.activeTechs = [];
+    state.monthsBack = 0;
+    state.selectedDay = null;
+    state.industryOpen = false;
+    state.techOpen = false;
+    render();
+  }
+
   function render() {
     renderTabs();
     renderHistoryBar();
-    renderIndustries();
+    renderFilters();
     renderCards();
   }
 
@@ -284,26 +369,161 @@
     state._viewedMonthIndex = viewedMonthIndex;
   }
 
-  function renderIndustries() {
-    var list = document.getElementById("industryList");
-    list.innerHTML = "";
-    INDUSTRY_DEFS.forEach(function (i) {
-      var active = i.id === state.activeIndustry;
-      var row = el("div", "ind-row");
-      row.style.background = active ? "#E1EFFF" : "transparent";
-      var dot = el("span", "ind-dot");
-      dot.style.opacity = active ? "1" : "0";
-      var label = el("span", "ind-label", escapeHtml(i.label));
-      label.style.color = active ? "#004068" : "#313131";
-      label.style.fontWeight = active ? "600" : "500";
-      row.appendChild(dot);
-      row.appendChild(label);
-      row.addEventListener("click", function () {
-        state.activeIndustry = i.id;
-        render();
-      });
-      list.appendChild(row);
+  var CHECK_SVG = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+  var CHEVRON_SVG = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#808080" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+  var X_SVG = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#004068" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
+  function optionRow(label, checked, onClick) {
+    var row = el("div", "opt-row");
+    row.style.background = checked ? "#E1EFFF" : "transparent";
+
+    var box = el("div", "opt-box", CHECK_SVG);
+    box.style.background = checked ? "#0082E6" : "#FFFFFF";
+    box.style.borderColor = checked ? "#0082E6" : "#C8C8C8";
+    box.querySelector("svg").style.opacity = checked ? "1" : "0";
+    row.appendChild(box);
+
+    var text = el("div", "opt-label", escapeHtml(label));
+    text.style.color = checked ? "#004068" : "#313131";
+    text.style.fontWeight = checked ? "600" : "500";
+    row.appendChild(text);
+
+    row.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      onClick();
     });
+    return row;
+  }
+
+  function renderMultiSelect(cfg) {
+    var host = document.getElementById(cfg.containerId);
+    host.innerHTML = "";
+    var count = cfg.selected.length;
+
+    host.appendChild(el("div", "filter-label", escapeHtml(cfg.label)));
+
+    var summary;
+    if (count === 0) summary = cfg.allLabel;
+    else if (count === 1) summary = labelFor(cfg.defs, cfg.selected[0]);
+    else summary = count + " " + cfg.pluralNoun + " selecionadas";
+
+    var btn = el("div", "filter-btn");
+    btn.style.background = count > 0 ? "#E1EFFF" : "#FFFFFF";
+    btn.style.borderColor = cfg.open ? "#0082E6" : (count > 0 ? "#A4CFFF" : "#E3E3E3");
+
+    var dot = el("div", "ind-dot");
+    dot.style.opacity = count > 0 ? "1" : "0";
+    btn.appendChild(dot);
+
+    var text = el("div", "filter-btn-text", escapeHtml(summary));
+    text.style.color = count > 0 ? "#004068" : "#4D4D4D";
+    text.style.fontWeight = count > 0 ? "700" : "500";
+    btn.appendChild(text);
+
+    var chev = el("div", "chevron", CHEVRON_SVG);
+    chev.style.transform = cfg.open ? "rotate(180deg)" : "rotate(0deg)";
+    btn.appendChild(chev);
+
+    btn.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      cfg.onToggleOpen();
+    });
+    host.appendChild(btn);
+
+    if (cfg.open) {
+      var panel = el("div", "filter-panel");
+      panel.addEventListener("click", function (ev) { ev.stopPropagation(); });
+      panel.appendChild(optionRow(cfg.allLabel, count === 0, cfg.onClearAll));
+      cfg.defs.forEach(function (d) {
+        panel.appendChild(optionRow(d.label, cfg.selected.indexOf(d.id) !== -1, function () {
+          cfg.onToggleId(d.id);
+        }));
+      });
+      host.appendChild(panel);
+    }
+
+    if (count > 0) {
+      var chips = el("div", "chips");
+      cfg.selected.forEach(function (id) {
+        var chip = el("div", "chip", "<span></span>" + X_SVG);
+        chip.querySelector("span").textContent = labelFor(cfg.defs, id);
+        chip.title = "Remover filtro";
+        chip.addEventListener("click", function (ev) {
+          ev.stopPropagation();
+          cfg.onRemove(id);
+        });
+        chips.appendChild(chip);
+      });
+      host.appendChild(chips);
+    }
+  }
+
+  function renderFilters() {
+    renderMultiSelect({
+      containerId: "industryFilter",
+      label: "Indústria",
+      allLabel: "Todas as indústrias",
+      pluralNoun: "indústrias",
+      defs: INDUSTRY_DEFS,
+      selected: state.activeIndustries,
+      open: state.industryOpen,
+      onToggleOpen: function () {
+        state.industryOpen = !state.industryOpen;
+        state.techOpen = false;
+        render();
+      },
+      onToggleId: function (id) {
+        state.activeIndustries = toggleId(state.activeIndustries, id);
+        render();
+      },
+      onClearAll: function () {
+        state.activeIndustries = [];
+        render();
+      },
+      onRemove: function (id) {
+        state.activeIndustries = state.activeIndustries.filter(function (x) { return x !== id; });
+        render();
+      }
+    });
+
+    renderMultiSelect({
+      containerId: "techFilter",
+      label: "Tecnologia",
+      allLabel: "Todas as tecnologias",
+      pluralNoun: "tecnologias",
+      defs: TECH_DEFS,
+      selected: state.activeTechs,
+      open: state.techOpen,
+      onToggleOpen: function () {
+        state.techOpen = !state.techOpen;
+        state.industryOpen = false;
+        render();
+      },
+      onToggleId: function (id) {
+        state.activeTechs = toggleId(state.activeTechs, id);
+        render();
+      },
+      onClearAll: function () {
+        state.activeTechs = [];
+        render();
+      },
+      onRemove: function (id) {
+        state.activeTechs = state.activeTechs.filter(function (x) { return x !== id; });
+        render();
+      }
+    });
+
+    var wrap = document.getElementById("clearAllWrap");
+    wrap.innerHTML = "";
+    if (anyFilterActive()) {
+      var btn = el("div", "clear-btn",
+        '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#666666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span>Limpar filtros</span>');
+      btn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        clearAllFilters();
+      });
+      wrap.appendChild(btn);
+    }
   }
 
   function renderCards() {
@@ -323,10 +543,11 @@
     var filtered = state.news.filter(function (n) {
       var nd = parseDate(n.date);
       var categoryMatch = state.activeCategory === "all" || n.categoryId === state.activeCategory;
-      var industryMatch = state.activeIndustry === "all" || n.industryId === state.activeIndustry;
+      var industryMatch = state.activeIndustries.length === 0 || state.activeIndustries.indexOf(n.industryId) !== -1;
+      var techMatch = state.activeTechs.length === 0 || state.activeTechs.indexOf(n.tech) !== -1;
       var monthMatch = nd.y === viewedYear && nd.m === viewedMonthIndex + 1;
       var dayMatch = state.selectedDay === null || nd.d === state.selectedDay;
-      return categoryMatch && industryMatch && monthMatch && dayMatch;
+      return categoryMatch && industryMatch && techMatch && monthMatch && dayMatch;
     });
 
     resultCount.innerHTML = "<strong>" + filtered.length + "</strong> notícias encontradas";
@@ -335,15 +556,12 @@
 
     if (filtered.length === 0) {
       var empty = el("div", "empty-state");
-      empty.appendChild(el("p", "", "Nenhuma notícia encontrada para essa combinação de categoria, indústria e período."));
+      empty.appendChild(el("p", "", "Nenhuma notícia encontrada para essa combinação de categoria, indústria, tecnologia e período."));
       var btn = document.createElement("button");
       btn.textContent = "Limpar filtros";
-      btn.addEventListener("click", function () {
-        state.activeCategory = "all";
-        state.activeIndustry = "all";
-        state.monthsBack = 0;
-        state.selectedDay = null;
-        render();
+      btn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        clearAllFilters();
       });
       empty.appendChild(btn);
       content.appendChild(empty);
@@ -363,7 +581,17 @@
     var tags = el("div", "card-tags");
     tags.appendChild(el("span", "tag-category", escapeHtml(card.categoryLabel)));
     tags.appendChild(el("span", "tag-industry", escapeHtml(card.industryLabel)));
-    tags.appendChild(el("span", "tag-tech", escapeHtml(card.tech)));
+    var techTag = el("span", "tag-tech", escapeHtml(card.tech));
+    techTag.title = "Filtrar só por " + card.tech;
+    techTag.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      state.activeTechs = [card.tech];
+      state.industryOpen = false;
+      state.techOpen = false;
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    tags.appendChild(techTag);
     tags.appendChild(el("span", "card-date", escapeHtml(card.date)));
     wrap.appendChild(tags);
 
@@ -393,6 +621,15 @@
 
     return wrap;
   }
+
+  // Clicar em qualquer lugar fora dos filtros fecha o dropdown aberto.
+  document.addEventListener("click", function () {
+    if (state.industryOpen || state.techOpen) {
+      state.industryOpen = false;
+      state.techOpen = false;
+      render();
+    }
+  });
 
   fetch("noticias.json", { cache: "no-store" })
     .then(function (resp) {
