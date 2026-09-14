@@ -1,5 +1,35 @@
 [
   {
+    "id": "df627102e28df20c",
+    "categoryId": "fabrica",
+    "categoryLabel": "Fábrica Inteligente",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "Manufatura Aditiva",
+    "headline": "CEO da Metal Powder Works discute vantagens do processo de produção de pó sem fontes térmicas",
+    "summary": "John Barnes participa de podcast para falar sobre os benefícios do processo de produção de pó não térmico da empresa e a expansão de seu portfólio de materiais.",
+    "pitch": "A evolução nos processos de fabricação de pós metálicos impacta diretamente a viabilidade da manufatura aditiva. Use esta inovação para mostrar como a SKA apoia empresas na adoção de tecnologias avançadas de impressão 3D.",
+    "techBenefits": "O processo de produção de pó sem fontes térmicas melhora a consistência e a repetibilidade dos insumos metálicos utilizados na manufatura aditiva.",
+    "source": "TCT Magazine",
+    "date": "14/09/2026",
+    "url": "https://www.tctmagazine.com/podcasts/255-metal-powder-works-ceo-john-barnes-directpowder-always-gives-you-the-same-answer/"
+  },
+  {
+    "id": "0d42e9675cf0feb6",
+    "categoryId": "fabrica",
+    "categoryLabel": "Fábrica Inteligente",
+    "industryId": "life-sciences-healthcare",
+    "industryLabel": "Life Sciences & Healthcare",
+    "tech": "Manufatura Aditiva",
+    "headline": "Mosaic Manufacturing lança impressora 3D projetada para órteses personalizadas",
+    "summary": "A empresa Mosaic Manufacturing lançou a Orion, uma impressora 3D desenvolvida especificamente para laboratórios e clínicas capaz de fabricar dispositivos rígidos e flexíveis customizados para pacientes.",
+    "pitch": "Aproveite esta inovação no setor de saúde para mostrar como o portfólio de manufatura aditiva da SKA pode acelerar a produção de dispositivos médicos personalizados diretamente em clínicas e laboratórios com alta precisão.",
+    "techBenefits": "A tecnologia permite a fabricação sob demanda de geometrias complexas e específicas para cada paciente, utilizando materiais flexíveis e rígidos com alta repetibilidade e precisão.",
+    "source": "TCT Magazine",
+    "date": "14/09/2026",
+    "url": "https://www.tctmagazine.com/mosaic-manufacturing-launches-3d-printer-purpose-built-for-custom-orthotics/"
+  },
+  {
     "id": "fb54bea962642846",
     "categoryId": "fabrica",
     "categoryLabel": "Fábrica Inteligente",
