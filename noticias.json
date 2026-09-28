@@ -1,5 +1,35 @@
 [
   {
+    "id": "8946c17900535b67",
+    "categoryId": "fabrica",
+    "categoryLabel": "Fábrica Inteligente",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "Manufatura Aditiva",
+    "headline": "CEO da Fastech destaca crescimento da demanda por impressão 3D DED",
+    "summary": "O CEO da Fastech, Alan Pearce, discutiu no podcast TCT as vantagens do processo de produção de pó não térmico e a expansão de seu portfólio de materiais para manufatura aditiva.",
+    "pitch": "Use este avanço na tecnologia de manufatura aditiva para mostrar ao cliente como a expansão de novos materiais e processos produtivos pode acelerar a inovação e reduzir custos na fabricação de peças complexas com o apoio do portfólio SKA.",
+    "techBenefits": "O uso de processos avançados de produção de pó e tecnologias DED permite maior flexibilidade de materiais e eficiência na fabricação aditiva de componentes metálicos complexos.",
+    "source": "TCT Magazine",
+    "date": "28/09/2026",
+    "url": "https://www.tctmagazine.com/podcasts/256-fastech-ceo-alan-pearce-the-demand-signal-is-outweighing-the-fear-around-ded-3d-printing/"
+  },
+  {
+    "id": "e31d1c273629e2a0",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "A Evolução das Plataformas na Indústria e o Impacto do PLM",
+    "summary": "Uma análise sobre a transição das plataformas digitais de engenharia, evoluindo de bases estáticas para ecossistemas colaborativos e inteligentes que participam ativamente do processo de desenvolvimento.",
+    "pitch": "Aproveite esta discussão sobre a evolução das plataformas digitais para mostrar ao cliente como o PLM e o ecossistema 3DEXPERIENCE da SKA atuam como parceiros ativos no desenvolvimento de produtos, integrando dados e processos em uma única fonte de verdade.",
+    "techBenefits": "A adoção de plataformas digitais integradas centraliza o ciclo de vida do produto, facilitando a colaboração interdisciplinar e a gestão unificada de dados de engenharia desde a concepção até a fabricação.",
+    "source": "Beyond PLM",
+    "date": "27/09/2026",
+    "url": "https://beyondplm.com/2026/09/27/au2026-autodesk-platform-services-builds-with-you/"
+  },
+  {
     "id": "4294ed03f336dad7",
     "categoryId": "fabrica",
     "categoryLabel": "Fábrica Inteligente",
