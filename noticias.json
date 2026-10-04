@@ -1,5 +1,35 @@
 [
   {
+    "id": "79ed524101f3f12c",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "Do Digital Thread à Memória do Produto nas Operações",
+    "summary": "O artigo discute a evolução da gestão do ciclo de vida dos produtos conectando o digital thread diretamente com a memória operacional dos produtos.",
+    "pitch": "Aproveite esta discussão sobre product memory para mostrar ao cliente como o portfólio PLM da SKA conecta a engenharia ao chão de fábrica, garantindo rastreabilidade total e inteligência ao longo do ciclo de vida.",
+    "techBenefits": "Integra dados de engenharia e operações em uma única fonte da verdade, facilitando o acesso ao histórico e à memória de configuração de cada produto fabricado.",
+    "source": "Beyond PLM",
+    "date": "04/10/2026",
+    "url": "https://beyondplm.com/2026/10/04/au-2026-product-memory-operations-feedback/"
+  },
+  {
+    "id": "04a50b6ba658eb75",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "A Conexao do Contexto do Produto no PLM",
+    "summary": "Discussao sobre como as ferramentas de engenharia se conectam e a importancia de manter o contexto integrado do produto ao longo do seu ciclo de vida.",
+    "pitch": "Utilize este tema para demonstrar ao seu cliente como as solucoes de PLM da SKA centralizam o contexto do produto, eliminando silos de informacao e garantindo a integridade dos dados de engenharia em toda a empresa.",
+    "techBenefits": "Integra dados de engenharia, CAD, CAM e gestao de ciclo de vida em uma unica fonte da verdade, melhorando a rastreabilidade e a tomada de decisoes tecnicas.",
+    "source": "Beyond PLM",
+    "date": "03/10/2026",
+    "url": "https://beyondplm.com/2026/10/03/mcp-product-context-autodesk-au-2026/"
+  },
+  {
     "id": "761c7c918186c6eb",
     "categoryId": "design",
     "categoryLabel": "Design e Inovação",
