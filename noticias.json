@@ -120,6 +120,21 @@
     "url": "https://www.engineering.com/artec-3d-launches-software-for-large-scale-3d-environments/"
   },
   {
+    "id": "b4136ba4aa886ed7",
+    "categoryId": "design",
+    "categoryLabel": "Design e Inovação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "Automação de Projetos",
+    "headline": "AWS lanca conjunto de ferramentas de codigo aberto para desenvolvimento de IA fisica",
+    "summary": "A Amazon Web Services (AWS) lancou uma arquitetura de referencia e conjunto de ferramentas de codigo aberto voltadas para acelerar o desenvolvimento de equipes de robotica e IA fisica.",
+    "pitch": "Utilize este avanco em robotica e inteligencia artificial da AWS para mostrar ao seu cliente como a integracao de sistemas inteligentes e automacao e o caminho para o futuro da producao com as solucoes SKA.",
+    "techBenefits": "A utilizacao de arquiteturas de referencia de codigo aberto agiliza a criacao e simulacao de sistemas roboticos, reduzindo o tempo de desenvolvimento e validacao de novas tecnologias de automacao.",
+    "source": "Engineering.com",
+    "date": "09/10/2026",
+    "url": "https://www.engineering.com/aws-launches-open-source-toolchain-for-physical-ai-development/"
+  },
+  {
     "id": "e44ec61ca741e711",
     "categoryId": "design",
     "categoryLabel": "Design e Inovação",
