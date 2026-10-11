@@ -1,5 +1,35 @@
 [
   {
+    "id": "b2496df4e41df54b",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "A redefinição do PLM agêntico discutida no ecossistema de software industrial",
+    "summary": "Artigo analisa o conceito de PLM agêntico apresentado pela Autodesk em seu evento recente, discutindo as mudanças e inovações que estão sendo redefinidas no gerenciamento do ciclo de vida do produto.",
+    "pitch": "Aproveite esta discussão sobre PLM agêntico para mostrar ao cliente como o portfólio PLM da SKA, baseado na 3DEXPERIENCE, já transforma a gestão do ciclo de vida dos produtos com inteligência e conectividade avançadas.",
+    "techBenefits": "A adoção de conceitos avançados de IA e agentes inteligentes em sistemas PLM visa otimizar fluxos de trabalho de engenharia, automatizar tarefas repetitivas e integrar dados de produtos de forma mais inteligente.",
+    "source": "Beyond PLM",
+    "date": "11/10/2026",
+    "url": "https://beyondplm.com/2026/10/11/autodesk-agentic-plm-canvas-assistant/"
+  },
+  {
+    "id": "e0cc05e7dc809cb7",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "A Fundação de Dados por Trás do PLM Agente da Autodesk",
+    "summary": "O artigo discute os fundamentos de dados essenciais para o desenvolvimento de soluções de PLM baseadas em agentes apresentadas no evento AU.",
+    "pitch": "Aproveite esta discussão sobre PLM e gestão de dados para demonstrar ao cliente como o portfólio PLM da SKA, baseado na plataforma 3DEXPERIENCE, unifica os dados de engenharia e impulsiona a colaboração inteligente em toda a empresa.",
+    "techBenefits": "A integração centralizada de dados em sistemas PLM reduz silos informacionais, assegurando uma única fonte de verdade para todas as etapas do ciclo de vida do produto.",
+    "source": "Beyond PLM",
+    "date": "11/10/2026",
+    "url": "https://beyondplm.com/2026/10/11/autodesk-agentic-plm-data-foundation/"
+  },
+  {
     "id": "8f7790deecf5d442",
     "categoryId": "design",
     "categoryLabel": "Design e Inovação",
