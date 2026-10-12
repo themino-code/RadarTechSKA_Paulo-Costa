@@ -1,5 +1,35 @@
 [
   {
+    "id": "69891902060ef0fd",
+    "categoryId": "fabrica",
+    "categoryLabel": "Fábrica Inteligente",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "Manufatura Aditiva",
+    "headline": "A importancia da otimizacao do comportamento termico na manufatura aditiva de metais",
+    "summary": "A empresa de software AMSIS desenvolveu uma tecnologia de preparacao de construcao que analisa a distribuicao de calor, identifica zonas superaquecidas e otimiza estrategias de exposicao.",
+    "pitch": "Mostre ao cliente como as solucoes de manufatura aditiva da SKA podem melhorar a qualidade de impressao e reduzir falhas atraves de analises termicas avancadas.",
+    "techBenefits": "A analise da distribuicao de calor e a otimizacao das estrategias de exposicao evitam superaquecimentos, garantindo maior precisao e integridade estrutural em pecas metalicas impressas em 3D.",
+    "source": "TCT Magazine",
+    "date": "12/10/2026",
+    "url": "https://www.tctmagazine.com/podcasts/257-amsis-on-the-importance-of-thermal-behaviour-optimisation-in-metal-additive-manufacturing/"
+  },
+  {
+    "id": "6c2ad1714e56c71a",
+    "categoryId": "fabrica",
+    "categoryLabel": "Fábrica Inteligente",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "Manufatura Aditiva",
+    "headline": "A importância da trajetória de ferramenta na rigidez de peças impressas em FDM",
+    "summary": "O CEO da Novineer, Ali Tamijani, explica como vigas idênticas impressas em 3D podem ter rigidez até seis vezes diferente dependendo da trajetória de fabricação.",
+    "pitch": "Use este argumento para demonstrar ao cliente como o controle avançado de manufatura e a otimização de processos evitam falhas estruturais e garantem previsibilidade na manufatura aditiva.",
+    "techBenefits": "Integra a trajetória de ferramenta e os parâmetros de fatiamento diretamente como entradas de engenharia, melhorando a precisão mecânica e a rigidez de componentes fabricados por aditiva.",
+    "source": "TCT Magazine",
+    "date": "12/10/2026",
+    "url": "https://www.tctmagazine.com/your-fdm-part-doesnt-exist-until-you-slice-it/"
+  },
+  {
     "id": "b2496df4e41df54b",
     "categoryId": "governanca",
     "categoryLabel": "Governança da Informação",
@@ -28,6 +58,21 @@
     "source": "Beyond PLM",
     "date": "11/10/2026",
     "url": "https://beyondplm.com/2026/10/11/autodesk-agentic-plm-data-foundation/"
+  },
+  {
+    "id": "a0f9f9abcb43a4b4",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "AU 2026: PLM Agêntico Encontra a Cadeia de Suprimentos",
+    "summary": "O artigo discute a convergência entre tecnologias de PLM com agentes inteligentes e a gestão da cadeia de suprimentos.",
+    "pitch": "Mostre ao cliente como a evolução do PLM com inteligência e automação pode integrar e otimizar os processos de engenharia com a cadeia de suprimentos, aumentando a visibilidade e eficiência operacional.",
+    "techBenefits": "A integração de conceitos agênticos ao PLM melhora a colaboração, o fluxo de dados do ciclo de vida do produto e a visibilidade na cadeia de suprimentos de engenharia e fabricação.",
+    "source": "Beyond PLM",
+    "date": "11/10/2026",
+    "url": "https://beyondplm.com/2026/10/11/autodesk-agentic-plm-supply-chain/"
   },
   {
     "id": "8f7790deecf5d442",
