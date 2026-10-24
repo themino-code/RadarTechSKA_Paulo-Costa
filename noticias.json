@@ -1,5 +1,20 @@
 [
   {
+    "id": "2df7261420f4e35c",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "Retorno aos centros urbanos: Principais conclusões da GAMS 2026 e do relançado ITAP em Singapura",
+    "summary": "O evento GAMS e o relançado ITAP retornaram para o centro da cidade em Singapura, reunindo especialistas para debater os rumos da indústria e da tecnologia.",
+    "pitch": "Aproveite a movimentação do mercado e o foco em novas tecnologias industriais apresentado em eventos globais como o ITAP para posicionar o portfólio SKA de soluções avançadas como chave para a competitividade.",
+    "techBenefits": "A concentração de eventos industriais em grandes centros facilita o acesso a inovações de processos e tecnologias de fabricação, impulsionando a eficiência operacional.",
+    "source": "TCT Magazine",
+    "date": "24/10/2026",
+    "url": "https://www.tctmagazine.com/takeaways-global-additive-manufacturing-summit-relaunched-itap-singapore/"
+  },
+  {
     "id": "57a3c885664e3932",
     "categoryId": "fabrica",
     "categoryLabel": "Fábrica Inteligente",
@@ -178,6 +193,21 @@
     "source": "Engineering.com",
     "date": "23/10/2026",
     "url": "https://www.engineering.com/aiaa-forms-team-to-define-cfd-priorities-through-2045/"
+  },
+  {
+    "id": "4814cb93be724899",
+    "categoryId": "design",
+    "categoryLabel": "Design e Inovação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "CAD",
+    "headline": "Como escolher a estação de trabalho ideal para fluxos de desenvolvimento e projeto de produtos",
+    "summary": "O artigo discute como as estações de trabalho HP Z baseadas em Intel oferecem flexibilidade e melhor desempenho para fluxos de trabalho de desenvolvimento e fabricação de produtos sem custos excessivos.",
+    "pitch": "Ao falar com clientes sobre projetos pesados em CAD, CAE e PLM, utilize o argumento de que contar com o hardware adequado garante o máximo aproveitamento do ecossistema SKA, otimizando o tempo de processamento de simulações e modelagens complexas.",
+    "techBenefits": "Garante maior capacidade de processamento gráfico e computacional, reduzindo o tempo de renderização de modelos CAD e execução de malhas de análise em CAE.",
+    "source": "Develop3D",
+    "date": "23/10/2026",
+    "url": "https://develop3d.com/sponsored/which-workstation-is-right-for-your-pdm-workflow/"
   },
   {
     "id": "3ce9d5fc11fd7e9d",
