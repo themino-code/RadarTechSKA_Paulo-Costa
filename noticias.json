@@ -15,6 +15,21 @@
     "url": "https://www.tctmagazine.com/takeaways-global-additive-manufacturing-summit-relaunched-itap-singapore/"
   },
   {
+    "id": "a55921b144010c86",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "A interseção do PLM legado com a nova IA e seus riscos de segurança",
+    "summary": "Incidentes recentes de segurança destacam os desafios e riscos na integração entre sistemas PLM tradicionais e as novas tecnologias de inteligência artificial.",
+    "pitch": "Utilize este argumento para demonstrar aos clientes da SKA como plataformas modernas de PLM na nuvem, como a 3DEXPERIENCE, gerenciam a segurança de dados ao integrar novas tecnologias como IA, protegendo a propriedade intelectual da engenharia.",
+    "techBenefits": "Melhora a governança de dados e a segurança cibernética ao integrar ferramentas de inteligência artificial em ambientes de gerenciamento do ciclo de vida do produto.",
+    "source": "Beyond PLM",
+    "date": "24/10/2026",
+    "url": "https://beyondplm.com/2026/10/24/plm-security-risks-legacy-cloud-ai/"
+  },
+  {
     "id": "57a3c885664e3932",
     "categoryId": "fabrica",
     "categoryLabel": "Fábrica Inteligente",
