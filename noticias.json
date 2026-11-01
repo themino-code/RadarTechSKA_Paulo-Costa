@@ -1,5 +1,35 @@
 [
   {
+    "id": "cd2dcd0583ab01bc",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "Quality Manufacturing Corporation transforma dados de inspeção 3D em insights práticos",
+    "summary": "A Quality Manufacturing Corporation adotou relatórios de inspeção 3D claros e acessíveis para encurtar prazos de produção, melhorar a comunicação interna e apoiar a tomada de decisões.",
+    "pitch": "Mostre ao cliente como a integração de dados de qualidade e processos conectados agiliza a tomada de decisão e reduz os prazos de entrega, alinhando-se aos conceitos de PLM e gestão integrada do portfólio SKA.",
+    "techBenefits": "Acesso centralizado a relatórios de inspeção 3D detalhados permite identificar desvios rapidamente, otimizando o fluxo de fabricação e garantindo maior rigor de precisão geométrica.",
+    "source": "Engineering.com",
+    "date": "01/11/2026",
+    "url": "https://www.engineering.com/quality-manufacturing-corporation-transforms-its-3d-inspection-data-into-practical-insights/"
+  },
+  {
+    "id": "d3aca627461d1b58",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "Oracle PLM no AI World 2026: Da Gestão de Registros à Tomada de Decisão em Produtos",
+    "summary": "O artigo discute a evolução do Oracle PLM em direção a uma abordagem orientada por inteligência artificial para apoiar decisões estratégicas sobre produtos.",
+    "pitch": "Aproveite esta discussão sobre a evolução do PLM para mostrar ao seu cliente como as soluções de PLM do portfólio SKA ajudam a transformar dados de engenharia em decisões de negócio mais rápidas e assertivas.",
+    "techBenefits": "O uso de inteligência artificial em plataformas de PLM centraliza o conhecimento de engenharia e acelera o ciclo de desenvolvimento através de análises preditivas e suporte automatizado à decisão.",
+    "source": "Beyond PLM",
+    "date": "31/10/2026",
+    "url": "https://beyondplm.com/2026/10/31/oracle-plm-ai-world-2026-ai-agents-roadmap/"
+  },
+  {
     "id": "f9bf3f1ef533f8e1",
     "categoryId": "design",
     "categoryLabel": "Design e Inovação",
