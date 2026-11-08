@@ -1,5 +1,20 @@
 [
   {
+    "id": "651ccfdb4b0be25a",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "Os desafios da implementação de memória de produto e a necessidade de começar pequeno",
+    "summary": "Uma análise crítica sobre os obstáculos práticos para a adoção de conceitos de memória de produto no gerenciamento de ciclo de vida.",
+    "pitch": "Aproveite esta discussão para mostrar ao cliente que a implementação de soluções PLM com a SKA pode ser feita de forma escalável e gradual, reduzindo os riscos e superando os obstáculos práticos citados no mercado.",
+    "techBenefits": "A abordagem modular do PLM permite estruturar o histórico e o conhecimento de engenharia dos produtos em etapas controladas, facilitando a adoção sem sobrecarregar a operação.",
+    "source": "Beyond PLM",
+    "date": "08/11/2026",
+    "url": "https://beyondplm.com/2026/11/08/product-memory-response-ilan-madjar/"
+  },
+  {
     "id": "745a891712b57fa3",
     "categoryId": "governanca",
     "categoryLabel": "Governança da Informação",
