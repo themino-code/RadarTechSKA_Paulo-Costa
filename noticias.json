@@ -195,6 +195,36 @@
     "url": "https://www.engineering.com/advantech-launches-fanless-ds-351-and-ds-354-signage-platforms/"
   },
   {
+    "id": "d70a8132d28dfd99",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "Por que a memória de produto precisa de um ciclo contínuo na engenharia",
+    "summary": "O artigo discute como sistemas de IA reconstroem conhecimentos já analisados e como a memória de produto é vital para a gestão do ciclo de vida na engenharia.",
+    "pitch": "Aproveite esta discussão sobre a memória de produto e o reuso de dados de engenharia para demonstrar como o portfólio PLM da SKA centraliza e capitaliza o conhecimento técnico da sua empresa, evitando esforço redundante.",
+    "techBenefits": "A centralização do histórico e do conhecimento técnico reduz o esforço redundante de análise e otimiza a gestão de dados de engenharia ao longo do ciclo de vida do produto.",
+    "source": "Beyond PLM",
+    "date": "13/11/2026",
+    "url": "https://beyondplm.com/2026/11/13/product-memory-flywheel-persistent-memory/"
+  },
+  {
+    "id": "d7e63482f9da2547",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "high-tech",
+    "industryLabel": "High Tech",
+    "tech": "PLM",
+    "headline": "Saída de Jensen Huang gera dúvidas sobre as ambições da Nvidia em IA industrial",
+    "summary": "A saída de liderança na Nvidia levanta incertezas sobre as futuras prioridades da empresa em inteligência artificial voltada para o setor industrial, embora operações e compromissos com clientes sigam normalmente.",
+    "pitch": "A incerteza sobre os rumos da IA industrial da Nvidia reforça a importância de contar com parceiros consolidados como a SKA, que oferece soluções robustas em PLM e engenharia para garantir a estabilidade e inovação contínua na sua indústria.",
+    "techBenefits": "A inteligência artificial industrial apoia a otimização de processos de engenharia e fabricação, aumentando a eficiência operacional e reduzindo o tempo de lançamento de produtos.",
+    "source": "Engineering.com",
+    "date": "13/11/2026",
+    "url": "https://www.engineering.com/jensen-huangs-departure-raises-questions-about-nvidias-industrial-ai-ambitions/"
+  },
+  {
     "id": "3dbc3a14a5e883fd",
     "categoryId": "governanca",
     "categoryLabel": "Governança da Informação",
