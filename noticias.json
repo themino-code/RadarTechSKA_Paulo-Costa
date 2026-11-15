@@ -1,5 +1,20 @@
 [
   {
+    "id": "218ec24444bcf4e4",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "business-service",
+    "industryLabel": "Business Service",
+    "tech": "PLM",
+    "headline": "Preços de PLM e Inteligência Artificial: como a tecnologia impacta a venda de licenças",
+    "summary": "O artigo discute como a adoção de inteligência artificial no PLM pode mudar os modelos de cobrança dos fornecedores, levantando debates sobre a transição para preços baseados em resultados.",
+    "pitch": "Utilize este tema para discutir com seus clientes a importância de flexibilidade e inovação na gestão do ciclo de vida do produto, mostrando como o portfolio PLM da SKA acompanha as tendências globais de mercado.",
+    "techBenefits": "A integração de inteligência artificial e novas estruturas de licenciamento no PLM otimiza a gestão de processos de engenharia e a tomada de decisões corporativas.",
+    "source": "Beyond PLM",
+    "date": "15/11/2026",
+    "url": "https://beyondplm.com/2026/11/15/ai-and-plm-pricing-vendors-sell-seats-the-way-architects-sell-hours/"
+  },
+  {
     "id": "dbdc79dc89344dde",
     "categoryId": "design",
     "categoryLabel": "Design e Inovação",
