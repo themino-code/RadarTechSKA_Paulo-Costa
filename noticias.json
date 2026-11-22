@@ -1,5 +1,20 @@
 [
   {
+    "id": "5a41031c00ac8731",
+    "categoryId": "governanca",
+    "categoryLabel": "Governança da Informação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "PLM",
+    "headline": "A personalização de PLM na era da IA e a criação de aplicações",
+    "summary": "A personalização de PLM na era da inteligência artificial está mudando o foco da modificação do sistema central para a criação de aplicativos e agentes especializados por qualquer usuário.",
+    "pitch": "Mostre ao cliente como as modernas soluções de PLM do portfólio SKA permitem maior flexibilidade e autonomia na criação de aplicações e automações para o ciclo de vida do produto.",
+    "techBenefits": "A adoção de abordagens baseadas em aplicativos e agentes na gestão do ciclo de vida do produto reduz a dependência de desenvolvimentos complexos e acelera a implantação de melhorias nos processos de engenharia.",
+    "source": "Beyond PLM",
+    "date": "22/11/2026",
+    "url": "https://beyondplm.com/2026/11/22/plm-customization-ai-everyone-can-build/"
+  },
+  {
     "id": "c15d436a3a974b4b",
     "categoryId": "design",
     "categoryLabel": "Design e Inovação",
