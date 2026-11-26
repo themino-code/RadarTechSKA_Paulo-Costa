@@ -1,5 +1,20 @@
 [
   {
+    "id": "5372e4612e606fe7",
+    "categoryId": "fabrica",
+    "categoryLabel": "Fábrica Inteligente",
+    "industryId": "high-tech",
+    "industryLabel": "High Tech",
+    "tech": "Manufatura Aditiva",
+    "headline": "Bambu Lab lança seu primeiro scanner 3D chamado S1 3D",
+    "summary": "A Bambu Lab anunciou o lançamento do seu primeiro scanner 3D, que inclui o software Bambu Scan para processamento de modelos sem a necessidade de licenças adicionais.",
+    "pitch": "Aproveite a facilidade de captação de geometria real com o novo scanner da Bambu Lab para integrar dados do mundo físico diretamente nos processos de desenvolvimento e engenharia suportados pelas soluções SKA.",
+    "techBenefits": "Facilita a digitalização de peças físicas e o pós-processamento de modelos 3D diretamente no fluxo de trabalho, agilizando a engenharia reversa e a validação de geometrias.",
+    "source": "Develop3D",
+    "date": "26/11/2026",
+    "url": "https://develop3d.com/3d-scanning/s1-3d-bambu-labs-first-3d-scanner/"
+  },
+  {
     "id": "7389c8d1856f2383",
     "categoryId": "governanca",
     "categoryLabel": "Governança da Informação",
@@ -163,6 +178,36 @@
     "source": "Engineering.com",
     "date": "25/11/2026",
     "url": "https://www.engineering.com/adopt-ai-without-creating-your-next-legacy-problem/"
+  },
+  {
+    "id": "31ad1e13d6919846",
+    "categoryId": "design",
+    "categoryLabel": "Design e Inovação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "Automação de Projetos",
+    "headline": "Siemens expande agente de IA Eigen para indústrias de processo",
+    "summary": "A tecnologia automatiza tarefas de engenharia no sistema SIMATIC PCS 7, gerando potenciais economias de tempo de até 60% em casos de uso selecionados.",
+    "pitch": "Utilize este avanço em automação e eficiência de engenharia para mostrar como as soluções do portfólio SKA ajudam sua empresa a reduzir drasticamente o tempo de projeto e otimizar processos produtivos industriais.",
+    "techBenefits": "A automação de tarefas repetitivas de engenharia em sistemas de controle reduz o tempo de desenvolvimento e minimiza erros humanos na configuração industrial.",
+    "source": "Engineering.com",
+    "date": "25/11/2026",
+    "url": "https://www.engineering.com/siemens-expands-eigen-ai-agent-into-process-industries/"
+  },
+  {
+    "id": "6a677c3bccf1d089",
+    "categoryId": "design",
+    "categoryLabel": "Design e Inovação",
+    "industryId": "industrial-equipment",
+    "industryLabel": "Industrial Equipment",
+    "tech": "CAE",
+    "headline": "Invisibl Cloud recebe prêmio de melhor uso de HPC e inteligência artificial na nuvem em 2026",
+    "summary": "A empresa Invisibl Cloud foi premiada pelo uso da plataforma Tachyon, que permite a orquestração escalável de computação de alto desempenho (HPC) na AWS.",
+    "pitch": "Utilize a alta performance de processamento em nuvem para acelerar suas análises complexas de engenharia e reduzir o tempo de lançamento de novos produtos com o portfólio de simulação e colaboração da SKA.",
+    "techBenefits": "A orquestração escalável de computação de alto desempenho (HPC) na nuvem possibilita a execução rápida e eficiente de simulações complexas de engenharia e processamento de grandes volumes de dados.",
+    "source": "Engineering.com",
+    "date": "25/11/2026",
+    "url": "https://www.engineering.com/invisibl-cloud-awarded-for-best-use-of-hpc-ai-in-the-cloud-in-2026/"
   },
   {
     "id": "9ffd09c621a655be",
